@@ -1,2 +1,10 @@
 language: ruby
-script: echo foo
+
+jobs:
+  include:
+    - stage: test
+      script: echo test
+    - # stage name not required, will continue to use `test`
+      script: echo test continuation
+    - stage: deploy
+      script: echo deploy
